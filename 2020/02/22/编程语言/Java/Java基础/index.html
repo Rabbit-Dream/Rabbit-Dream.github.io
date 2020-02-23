@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Java基础 | 蓝依然</title><meta name="description" content="Java基础"><meta name="keywords" content="学习,编程"><meta name="author" content="MoYiXuan"><meta name="copyright" content="MoYiXuan"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Java基础"><meta name="twitter:description" content="Java基础"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png"><meta property="og:type" content="article"><meta property="og:title" content="Java基础"><meta property="og:url" content="http://yoursite.com/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%9F%BA%E7%A1%80/"><meta property="og:site_name" content="蓝依然"><meta property="og:description" content="Java基础"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://yoursite.com/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%9F%BA%E7%A1%80/"><link rel="prev" title="Java异常处理" href="http://yoursite.com/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"><link rel="next" title="Java反射" href="http://yoursite.com/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%8F%8D%E5%B0%84/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">蓝依然</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">16</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><div class="sidebar-toc__content"><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#基础语法"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">基础语法</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#成员变量与局部变量的区别"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">成员变量与局部变量的区别</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#匿名对象"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">匿名对象</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#封装"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">封装</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#pribate-私有-关键字"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">pribate(私有)关键字</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#构造函数"><span class="toc_mobile_items-number">6.</span> <span class="toc_mobile_items-text">构造函数</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#构造代码块"><span class="toc_mobile_items-number">7.</span> <span class="toc_mobile_items-text">构造代码块</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#this关键字"><span class="toc_mobile_items-number">8.</span> <span class="toc_mobile_items-text">this关键字</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#static关键字"><span class="toc_mobile_items-number">9.</span> <span class="toc_mobile_items-text">static关键字</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#代码块"><span class="toc_mobile_items-number">10.</span> <span class="toc_mobile_items-text">代码块</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#成员变量和静态变量的区别"><span class="toc_mobile_items-number">11.</span> <span class="toc_mobile_items-text">成员变量和静态变量的区别</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#主函数"><span class="toc_mobile_items-number">12.</span> <span class="toc_mobile_items-text">主函数</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#继承"><span class="toc_mobile_items-number">13.</span> <span class="toc_mobile_items-text">继承</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#super关键字"><span class="toc_mobile_items-number">14.</span> <span class="toc_mobile_items-text">super关键字</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#函数覆盖（Override）"><span class="toc_mobile_items-number">15.</span> <span class="toc_mobile_items-text">函数覆盖（Override）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#子类实例化过程"><span class="toc_mobile_items-number">16.</span> <span class="toc_mobile_items-text">子类实例化过程</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#final关键字"><span class="toc_mobile_items-number">17.</span> <span class="toc_mobile_items-text">final关键字</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#抽象类"><span class="toc_mobile_items-number">18.</span> <span class="toc_mobile_items-text">抽象类</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#抽象类的特点"><span class="toc_mobile_items-number">19.</span> <span class="toc_mobile_items-text">抽象类的特点</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#接口"><span class="toc_mobile_items-number">20.</span> <span class="toc_mobile_items-text">接口</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#多态"><span class="toc_mobile_items-number">21.</span> <span class="toc_mobile_items-text">多态</span></a></li></ol></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础语法"><span class="toc-number">1.</span> <span class="toc-text">基础语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量与局部变量的区别"><span class="toc-number">2.</span> <span class="toc-text">成员变量与局部变量的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名对象"><span class="toc-number">3.</span> <span class="toc-text">匿名对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">4.</span> <span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pribate-私有-关键字"><span class="toc-number">5.</span> <span class="toc-text">pribate(私有)关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造函数"><span class="toc-number">6.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造代码块"><span class="toc-number">7.</span> <span class="toc-text">构造代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this关键字"><span class="toc-number">8.</span> <span class="toc-text">this关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static关键字"><span class="toc-number">9.</span> <span class="toc-text">static关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">10.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量和静态变量的区别"><span class="toc-number">11.</span> <span class="toc-text">成员变量和静态变量的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主函数"><span class="toc-number">12.</span> <span class="toc-text">主函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">13.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super关键字"><span class="toc-number">14.</span> <span class="toc-text">super关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数覆盖（Override）"><span class="toc-number">15.</span> <span class="toc-text">函数覆盖（Override）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子类实例化过程"><span class="toc-number">16.</span> <span class="toc-text">子类实例化过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final关键字"><span class="toc-number">17.</span> <span class="toc-text">final关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类"><span class="toc-number">18.</span> <span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类的特点"><span class="toc-number">19.</span> <span class="toc-text">抽象类的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口"><span class="toc-number">20.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-number">21.</span> <span class="toc-text">多态</span></a></li></ol></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png)"><div id="post-info"><div id="post-title"><div class="posttitle">Java基础</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-02-22<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-01-05</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>阅读量:</span><span id="busuanzi_value_page_pv"></span></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
+<li><p>整型和浮点型运算时，整型会自动提升为浮点型。</p>
+</li>
+<li><p>可以将浮点型强制转为整型，但超出范围后将始终返回整型的最大值。</p>
+</li>
+<li><p>三元运算<code>b ? x : y</code>后面的类型必须相同，三元运算也是“短路运算”，只计算<code>x</code>或<code>y</code>。</p>
+</li>
+<li><p><code>\u####</code> 表示一个Unicode编码的字符。</p>
+</li>
+<li><p>Java的字符串除了是一个引用类型外，还有个重要特点，就是字符串不可变。</p>
+<ul>
+<li>字符串变量<code>s</code>再次赋值不是<code>s</code>内容变了，而是<code>s</code>指向变了。</li>
+</ul>
+</li>
+<li><p>引用类型的变量可以指向一个空值<code>null</code>，它表示不存在，即该变量不指向任何对象。</p>
+</li>
+<li><p>基本类型的变量是“持有”某个数值，引用类型的变量是“指向”某个对象。</p>
+</li>
+<li><p>注意数组是引用类型，并且数组大小不可变。</p>
+</li>
+<li><p><code>%x</code>格式化输出十六进制整数。</p>
+</li>
+<li><p><code>%e</code>格式化输出科学计数法表示浮点数。</p>
+</li>
+<li><p>注意，由于%表示占位符，因此，连续两个%%表示一个%字符本身。</p>
+</li>
+<li><p>Java提供的输出包括：<code>System.out.println()</code> / <code>print()</code> / <code>printf()</code>，其中<code>printf()</code>可以格式化输出。</p>
+</li>
+<li><p>Java提供Scanner对象来方便输入，读取对应的类型可以使用：<code>scanner.nextLine()</code> / <code>nextInt()</code> / <code>nextDouble()</code> / …</p>
+</li>
+<li><p>整数运算在除数为<code>0</code>时会报错，而浮点数运算在除数为<code>0</code>时，不会报错，但会返回几个特殊值：</p>
+<ul>
+<li><code>NaN</code>表示Not a Number</li>
+<li><code>Infinity</code>表示无穷大</li>
+<li><code>-Infinity</code>表示负无穷大</li>
+</ul>
+</li>
+<li><p>要注意浮点数判断相等不能直接用<code>==</code>运算符。</p>
+</li>
+<li><p>引用类型判断内容相等要使用<code>equals()</code>，注意避免<code>NullPointerException</code>。</p>
+</li>
+</ul>
+<h2 id="成员变量与局部变量的区别"><a href="#成员变量与局部变量的区别" class="headerlink" title="成员变量与局部变量的区别"></a>成员变量与局部变量的区别</h2><ul>
+<li>成员变量<ul>
+<li>成员变量定义在类中，在整个类中都可以被访问。</li>
+<li>成员变量随着对象的建立而建立，存在于对象所在的堆内存。</li>
+<li>成员变量有默认初始化。</li>
+</ul>
+</li>
+<li>局部变量<ul>
+<li>局部变量值定义在局部范围内。</li>
+<li>局部变量存在于栈内存中。</li>
+<li>作用范围结束，变量会自动释放。</li>
+<li>局部变量没有默认初始化。</li>
+</ul>
+</li>
+</ul>
+<h2 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h2><ul>
+<li>例如:<code>new Car().ran()</code></li>
+<li>匿名对象是对象的简化形式</li>
+<li>匿名对象两种使用情况：</li>
+<li>当对象方法只调用一次。</li>
+<li>匿名对象可以作为实际参数。</li>
+</ul>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
+<li>封装：是指隐藏对象的属性和实现细节，仅对外提供公关访问方式。</li>
+<li>好处：<ul>
+<li>将变化隔离</li>
+<li>便于使用</li>
+<li>提高重用性</li>
+<li>提高安全性</li>
+</ul>
+</li>
+<li>封装原则：<ul>
+<li>将不需要对外提供的内容都隐藏起来。</li>
+<li>把属性都隐藏，提供公共方法对其访问。</li>
+</ul>
+</li>
+<li>高内聚，低耦合<ul>
+<li>高内聚就是类的内部数据操作细节自己完成，不允许外部干涉</li>
+<li>低耦合：仅暴露少量的方法给外部使用。</li>
+</ul>
+</li>
+<li>属性私有、<code>get/set</code><h2 id="pribate-私有-关键字"><a href="#pribate-私有-关键字" class="headerlink" title="pribate(私有)关键字"></a>pribate(私有)关键字</h2></li>
+<li>private关键字<ul>
+<li>是一个权限修饰符</li>
+<li>用于修饰成员（成员变量和成员函数）</li>
+<li>被私有化的成员只存在于本类中有效</li>
+</ul>
+</li>
+<li>常用之一<ul>
+<li>将成员变量私有化，对外提供对应的<code>set</code>，<code>get</code>方法对其进程访问。提高对的数据访问的安全性。<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2></li>
+</ul>
+</li>
+<li>特点：<ul>
+<li>函数名与类名相同</li>
+<li>不用定义返回值类型</li>
+<li>不用写<code>return</code>语句，但可以写。</li>
+</ul>
+</li>
+<li>作用：<ul>
+<li>给对象进行初始化</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>默认构造函数的特点</li>
+<li>多个构造函数以重载的形式存在</li>
+</ul>
+</li>
+<li>什么时候定义？</li>
+<li>该食物一存在就具备一些特性或者行为，那么将这些内容定义在构造函数中。<h2 id="构造代码块"><a href="#构造代码块" class="headerlink" title="构造代码块"></a>构造代码块</h2></li>
+<li>作用<ul>
+<li>给对象进行初始化</li>
+<li>定义不同对象共性内容</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>对象一建立就运行，而且先于构造函数执行</li>
+</ul>
+</li>
+<li>与构造函数区别<ul>
+<li>构造函数给对象进行初始化</li>
+<li>构造代码块是给多有对象进行统一初始化</li>
+</ul>
+</li>
+</ul>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ul>
+<li><code>this</code>代表其所在函数所属对象的引用。换言之：<code>this</code>代本类对象的引用。</li>
+<li>什么时候使用<code>this</code>关键字呢？<ul>
+<li>当在函数内需要用到该函数对象时，就用<code>this</code></li>
+</ul>
+</li>
+<li><code>this()</code>语句用于构造函数之间的调用，且只能放在第一行，因为初始化动作要在前面。</li>
+</ul>
+<h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><ul>
+<li>static关键字：<ul>
+<li>用于修饰成员（成员变量和成员函数）</li>
+</ul>
+</li>
+<li>被修饰的对象具备以下特点：<ul>
+<li>给类进行初始化</li>
+<li>随着类的加载而加载</li>
+<li>优先于对象存在</li>
+<li>被所有对象共享</li>
+<li>可以直接被类名调用,也可以被对象调用</li>
+</ul>
+</li>
+<li>使用注意：<ul>
+<li>静态方法只能访问静态成员</li>
+<li>静态方法中不可以写<code>this</code>,<code>super</code>关键字</li>
+<li>主函数是静态的</li>
+</ul>
+</li>
+<li>静态在前加载，非静态在后。前不可访问后，后可访问前。</li>
+</ul>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><ul>
+<li><p>静态代码块</p>
+  <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>构造代码块</p>
+  <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class&#123;</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>在类中执行顺序：</p>
+<ul>
+<li>静态代码块 &gt; 构造代码块 &gt; 构造函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="成员变量和静态变量的区别"><a href="#成员变量和静态变量的区别" class="headerlink" title="成员变量和静态变量的区别"></a>成员变量和静态变量的区别</h2><ul>
+<li>生命周期不同<ul>
+<li>成员变量随对象的创建而存在，随着对象的被回收而释放。</li>
+<li>静态变量随着类的加载而存在，随着类的消失而消失。（生命周期较长）</li>
+</ul>
+</li>
+<li>调用方式不同<ul>
+<li>成员变量只能被对象调用。</li>
+<li>静态变量可以被对象调用，还可以被类名调用</li>
+</ul>
+</li>
+<li>别名不同<ul>
+<li>成员变量也称为实例变量</li>
+<li>静态变量称为类变量</li>
+</ul>
+</li>
+<li>数据存储位置不同<ul>
+<li>成员变量存储在对内存对象中，所以也叫对象的特有数据。</li>
+<li>静态变量存储在方法区（的静态区），所以也叫对象的共享数据。</li>
+</ul>
+</li>
+</ul>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><ul>
+<li><code>public</code>:应为权限必须最大</li>
+<li><code>static</code>:不需要对象，直接用主函数所属类名调用即可</li>
+<li><code>void</code>:主函数没有具体的返回值</li>
+<li><code>main</code>:函数名，不是关键字，只是一个jvm识别的固定的名字</li>
+<li><code>String[] args</code>:这是主函数的参数列表，是一个数组类型的参数，而且元素都是字符串类型<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class StaticDemo&#123;</span><br><span class="line">    public static void main(String[] args) &#123;    &#x2F;&#x2F;new String[0]</span><br><span class="line">        System.out.println(args);</span><br><span class="line">        System.out.println(args.length);</span><br><span class="line">        System.out.println(args[0]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<a href="/Java%E5%9F%BA%E7%A1%80/0.png" data-fancybox="group" data-caption="0.png" class="fancybox"><img alt="0.png" title="0.png" data-src="/Java%E5%9F%BA%E7%A1%80/0.png" class="lazyload"></a></li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>概念<ul>
+<li>多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承单独的那个类即可。</li>
+<li>父类又称超类。</li>
+<li>子类可以直接访问父类中的非私有的属性和行为。</li>
+<li>通过 extends 关键字让类与类之间产生继承关系。<br><code>eg: class SubDemo extends Demo{}</code></li>
+<li>继承的出现提高了代码的复用性。</li>
+<li>继承的出现让类与类之间产生了关系，提供了多态的前提。</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>Java 只支持单继承，不支持多继承。</li>
+<li>Java 支持多层继承（继承体系）。</li>
+<li>定义继承需要注意：<ul>
+<li>不要仅为了获取其他类中的某个功能而去继承。</li>
+<li>类与类直接按要有所属<code>is a</code>关系，xx1 是 xx2的一种。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><ul>
+<li><code>super</code> 和 <code>this</code> 的用法相同。</li>
+<li><code>this</code> 代表本类应用。</li>
+<li><code>super</code> 代表父类引用。</li>
+<li>当子父类出现同名成员时，可以使用<code>super</code> 进行区分。  </li>
+<li>子类要调用父类构造函数时，可以使用<code>super</code>语句。</li>
+</ul>
+<h2 id="函数覆盖（Override）"><a href="#函数覆盖（Override）" class="headerlink" title="函数覆盖（Override）"></a>函数覆盖（Override）</h2><ul>
+<li>子类中出现与父类一模一样的方法时，会出现覆盖操作，也成为重写或复写。</li>
+<li>父类中的私有方法不可以被复写。</li>
+<li>在子类覆盖方法中，继续使用被覆盖的方法可以通过 super.fun_name获取。</li>
+<li>方法名相同，参数列表相同</li>
+<li>修饰符：范围可以扩大但不可以缩小 <code>public &gt; protected &gt; default &gt; private</code></li>
+<li>覆盖注意事项：<ul>
+<li>覆盖时，子类方法权限一定要大于父类方法权限。</li>
+<li>静态只能覆盖静态。</li>
+</ul>
+</li>
+<li>覆盖的应用：当子类需要父类的功能，而功能主体子类有自己的特有内容时，可以复写父类中的方法，这样，即沿袭了父类的功能，有定义了子类特有的内容。</li>
+</ul>
+<h2 id="子类实例化过程"><a href="#子类实例化过程" class="headerlink" title="子类实例化过程"></a>子类实例化过程</h2><ul>
+<li>子类中所有的构造函数默认都会访问父类中空参数的构造函数。</li>
+<li>因为每一个构造函数的第一行都有以条默认的语句 <code>super();</code> 显化写出来一定要写在子类无参构造第一行</li>
+<li>如果父类只有有参构，子类不可以写无参构造（除非里面调用父类有参构造），所以在所有类的书写时，写有参构造之前先写无参构造。</li>
+<li>子类会具备父类中的数据，所以要先明确父类是如何对这些数据初始化的。</li>
+<li>当父类中没有空参数的构造函数时，子类的构造函数必须通过<code>this</code>或者<code>super</code>语句指定要访问的构造函数。</li>
+</ul>
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ul>
+<li><code>final</code>可以修饰类/方法/变量。</li>
+<li><code>final</code>修饰的类不可以被继承。</li>
+<li><code>final</code>修饰的方法不可以被覆盖。</li>
+<li><code>final</code>修饰的变量是一个常量。只能被赋值一次。</li>
+<li>内部类只能访问被<code>final</code>修饰的局部变量。</li>
+</ul>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ul>
+<li>抽象就是从多个事物中将共性的/本质的内容抽取出来。</li>
+<li>Java 中可以定义没有方法体的方法，该方法的具体实现由子类完成，该方法称为抽象方法，包含抽象方法的类是抽象类。</li>
+<li>多个对象都具备相同的功能，但是功能具体内容有所不同，那么在抽取过程中，只抽取了功能的定义，并未抽取功能主体，那么只有功能声明，没有功能主体的方法称为抽象方法。</li>
+</ul>
+<h2 id="抽象类的特点"><a href="#抽象类的特点" class="headerlink" title="抽象类的特点"></a>抽象类的特点</h2><ul>
+<li>格式： <code>修饰符 abstract 返回值类型 函数名（参数列表）</code></li>
+<li>抽象类不可以被实例化，也就是不可以用<code>new</code>创建对象。</li>
+<li>抽象类通过其子类实例化，儿子类需要覆盖掉抽象类中的所有的抽象方法后才可以创建对象，否则子类也是抽象类。</li>
+<li>抽象类中可以有构造函数吗？<ul>
+<li>可以。抽象类的构造函数用来初始化抽象类的一些字段，而这一切都在抽象类的派生类实例化之前发生。不仅如此，抽象类的构造函数还有一种巧妙的应用： 就是在其内部实现子类必须执行代码。</li>
+</ul>
+</li>
+<li>抽象关键字<code>abstract</code>不可以和哪些关键字共存？<ul>
+<li><code>private</code>: 因为一个<code>abstract</code>方法需要被重写，所以不能修饰为<code>pivate</code></li>
+<li><code>final</code>:因为一个<code>abstract</code>方法需要被重写，被<code>finall</code>修饰的方法是不能被重写的。</li>
+<li><code>static</code>:因为一个<code>abstract</code>方法没有方法体，静态方法需要对方法体执行内容分配的空间（<code>abstract</code>是没有实现的，不能产生对象，而是<code>static</code>是属于类的，类本身是已经存在的对象）</li>
+<li><code>sysnchronized</code>:是同步的，然而同步的需要具体的操作才能同步，但<code>abstract</code>是只有声明没有实现（即：使用<code>sysnchronized</code>关键字的是需要有具体的实现同步操作的，但是使用 abstract 是只有声明而没有实现的，这样就产生了冲突）</li>
+<li><code>native</code>: 他们本身的定义就是冲突的,<code>native</code>声明的方法是移交本地操作系统实现的，而 abstract 是移动子类对象实现的，同时修饰的话，导致不知道谁实现声明的方法</li>
+</ul>
+</li>
+<li>抽象类中不可以没有抽象方法？<ul>
+<li>抽象类可以没有抽象方法，但是如果你的一个类已经声明成了抽象类，即使这个类中没有抽方法，它也不能直接构造一个该类的对象。但是含抽象方法的类是抽象类。</li>
+</ul>
+</li>
+</ul>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><ul>
+<li>格式:<code>interface{}</code></li>
+<li>接口中的成员修饰符是固定的。<ul>
+<li>成员常量：<code>public static final</code></li>
+<li>成员函数： <code>public abstract</code></li>
+</ul>
+</li>
+<li>接口的出现将“多继承”通过另一种形式体现出来，即“多实现”。</li>
+<li>接口的特点：<ul>
+<li>接口是对外暴漏的规则。</li>
+<li>接口是程序的功能拓展。</li>
+<li>接口可以用来多实现。</li>
+<li>类与接口之间是实现关系，关键字<code>implement</code> ,而且类可以继承一个类的同时实现多个接口。(实现类命名规则:<code>接口nameImpl</code>)<br><code>eg: class Test extends Demo implements InterA,InterB,...</code></li>
+</ul>
+</li>
+<li>接口与接口之间可以有继承关系。(而且有多继承)</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li>成员函数(非静态【有重写特性】)：<ul>
+<li>编译时：要看引用变量所属的类中是否有所调用的成员。</li>
+<li>运行时：要看对象所属的类中是否有所调用的成员。<ul>
+<li>一句话：成员函数在多态调用时，编译看左边，运行看右边</li>
+<li>看声明时等号左边声明类有没有此方法（没有会报错），运行时看等号左边<code>new</code>哪个类，调用的就是哪个类的方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>成员函数（静态):<ul>
+<li>无论编译和运行，都参考做左边。</li>
+</ul>
+</li>
+<li>成员变量：<ul>
+<li>只看引用变量所属的类。(无论编译和运行，都参考做左边)</li>
+</ul>
+</li>
+<li><code>instanceof</code>用于判断对象的类型。<code>对象 instanceof 类型（类类型 接口类型）</code></li>
+</ul>
+<p>eg1:</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">class Cat extends Animal</span><br><span class="line">&#123;</span><br><span class="line">	public void eat()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;吃鱼&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void catchMouse()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;抓老鼠&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Dog extends Animal</span><br><span class="line">&#123;</span><br><span class="line">	public void eat()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;吃骨头&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void kanJia()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;看家&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Pig extends Animal</span><br><span class="line">&#123;</span><br><span class="line">	public void eat()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;饲料&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void gongDi()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;拱地&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;-----------------------------------------</span><br><span class="line">class DuoTaiDemo2 </span><br><span class="line">&#123;</span><br><span class="line">	public static void main(String[] args) </span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;Animal a &#x3D; new Cat();&#x2F;&#x2F;类型提升。 向上转型。</span><br><span class="line">		&#x2F;&#x2F;a.eat();</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F;如果想要调用猫的特有方法时，如何操作？</span><br><span class="line">		&#x2F;&#x2F;强制将父类的引用。转成子类类型。向下转型。</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F;Cat c &#x3D; (Cat)a;</span><br><span class="line">		&#x2F;&#x2F;c.catchMouse();</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F;千万不要出现这样的操作，而是下面将父类对象转成子类类型。</span><br><span class="line">		&#x2F;&#x2F;我们能转换的是父类应用指向了自己的子类对象时，该应用可以被提升，也可以被强制转换。</span><br><span class="line">		&#x2F;&#x2F;多态自始至终都是子类对象在做着变化。</span><br><span class="line">        &#x2F;&#x2F;Animal a &#x3D; new Animal();</span><br><span class="line">        &#x2F;&#x2F;Cat c &#x3D; (Cat)a;</span><br><span class="line"></span><br><span class="line">		&#x2F;*</span><br><span class="line">		毕姥爷 x &#x3D; new 毕老师();</span><br><span class="line"></span><br><span class="line">		x.讲课();</span><br><span class="line"></span><br><span class="line">		毕老师 y &#x3D; (毕老师)x;</span><br><span class="line"></span><br><span class="line">		y.看电影();</span><br><span class="line">		*&#x2F;</span><br><span class="line">		function(new Dog());</span><br><span class="line">		function(new Cat());</span><br><span class="line">	&#125;</span><br><span class="line">	public static void function(Animal a)&#x2F;&#x2F;Animal a &#x3D; new Cat();</span><br><span class="line">	&#123;</span><br><span class="line">		a.eat();</span><br><span class="line">		&#x2F;*</span><br><span class="line">		if(a instanceof Animal)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;haha&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		else </span><br><span class="line">		*&#x2F;</span><br><span class="line">		if(a instanceof Cat)</span><br><span class="line">		&#123;</span><br><span class="line">			Cat c &#x3D; (Cat)a;</span><br><span class="line">			c.catchMouse();</span><br><span class="line">		&#125;</span><br><span class="line">		else if(a instanceof Dog)</span><br><span class="line">		&#123;</span><br><span class="line">			Dog c &#x3D; (Dog)a;</span><br><span class="line">			c.kanJia();</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;*</span><br><span class="line">		instanceof : 用于判断对象的类型。 对象 intanceof 类型(类类型 接口类型)  </span><br><span class="line">		*&#x2F;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>eg2:</p>
+<p><a href="/Java%E5%9F%BA%E7%A1%80/1.png" data-fancybox="group" data-caption="多态" class="fancybox"><img alt="多态" title="多态" data-src="/Java%E5%9F%BA%E7%A1%80/1.png" class="lazyload"></a></p>
+<p>eg3:</p>
+<p><a href="/Java%E5%9F%BA%E7%A1%80/2.png" data-fancybox="group" data-caption="继承接口多态综合示例" class="fancybox"><img alt="继承接口多态综合示例" title="继承接口多态综合示例" data-src="/Java%E5%9F%BA%E7%A1%80/2.png" class="lazyload"></a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">MoYiXuan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%9F%BA%E7%A1%80/">http://yoursite.com/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%9F%BA%E7%A1%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">蓝依然</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习    </a><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B/">编程    </a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付宝"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>Java异常处理</span></div></a></div><div class="next-post pull_right"><a href="/2020/02/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java%E5%8F%8D%E5%B0%84/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>Java反射</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/02/22/编程语言/Java/JavaIO/" title="JavaIO"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">JavaIO</div></div></a></div><div class="relatedPosts_item"><a href="/2020/02/22/编程语言/HTML5&CSS&JS/HTML5/" title="HTML5学习"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">HTML5学习</div></div></a></div><div class="relatedPosts_item"><a href="/2020/02/22/编程语言/Java/Java反射/" title="Java反射"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">Java反射</div></div></a></div><div class="relatedPosts_item"><a href="/2020/02/22/编程语言/Java/Java异常处理/" title="Java异常处理"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">Java异常处理</div></div></a></div><div class="relatedPosts_item"><a href="/2020/02/22/编程语言/Java/Java日期与时间/" title="Java日期与时间"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg3.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">Java日期与时间</div></div></a></div><div class="relatedPosts_item"><a href="/2020/02/22/编程语言/Java/Java泛型/" title="Java泛型"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg3.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">Java泛型</div></div></a></div></div><div class="clear_both"></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By MoYiXuan</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
