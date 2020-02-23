@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>操作系统简答题 | LanYiRan</title><meta name="description" content="操作系统简答题"><meta name="keywords" content="操作系统,考研"><meta name="author" content="MoYiXuan"><meta name="copyright" content="MoYiXuan"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/logo.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://hm.baidu.com"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="操作系统简答题"><meta name="twitter:description" content="操作系统简答题"><meta name="twitter:image" content="http://lanyiran.com/img/24.jpg"><meta property="og:type" content="article"><meta property="og:title" content="操作系统简答题"><meta property="og:url" content="http://lanyiran.com/posts/4e12b941/"><meta property="og:site_name" content="LanYiRan"><meta property="og:description" content="操作系统简答题"><meta property="og:image" content="http://lanyiran.com/img/24.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="canonical" href="http://lanyiran.com/posts/4e12b941/"><link rel="prev" title="单层感知器" href="http://lanyiran.com/posts/b3da44e/"><link rel="next" title="终端走代理" href="http://lanyiran.com/posts/383b5193/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2d564eae4d2fdb4f8f85baa2d18b51e5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: true,
+  fancybox: true,
+  Snackbar: {"bookmark":{"title":"Snackbar.bookmark.title","message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">LanYiRan</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">16</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><div class="sidebar-toc__content"></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/24.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">操作系统简答题</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-02-22<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-02-23</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%80%83%E7%A0%94/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%80%83%E7%A0%94/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span><div class="post-meta-wordcount"><i class="fa fa-file-word-o post-meta__icon fa-fw" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">4.4k</span><span class="post-meta__separator">|</span><i class="fa fa-clock-o post-meta__icon fa-fw" aria-hidden="true"></i><span>阅读时长: 12 分钟</span><div class="post-meta-pv-cv"><span class="post-meta__separator">|</span><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>阅读量:</span><span id="busuanzi_value_page_pv"></span></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><blockquote>
+<p>进程切换步骤：</p>
+</blockquote>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 保存当前进程的上下文环境</span><br><span class="line">- 对运行进程的PCB进行更新，并移入相应的队列</span><br><span class="line">- 选择其他进程运行</span><br><span class="line">- 更新选择进程的PCB，包括将其状态改为运行状态</span><br><span class="line">- 对存储器管理数据结构进行更新</span><br><span class="line">- 恢复被选择进程移出时的处理机状态</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>引入缓冲的主要原因：</p>
+</blockquote>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 缓和CPU和I&#x2F;O设备间速度不匹配的矛盾</span><br><span class="line">- 减少对CPU的中断频率，放宽对中断响应时间的限制</span><br><span class="line">- 解决数据粒度不匹配的问题</span><br><span class="line">- 提高CPU和I&#x2F;O设备之间的并行性</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>缓冲的实现方法：</p>
+</blockquote>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 采用专门的硬件缓冲器。</span><br><span class="line">- 在内存划出一个具有n个单元的专用缓冲区，以便存放输入输出的数据。</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>缓冲区的类型：单缓冲，双缓冲，循环缓冲，缓冲池</p>
+</blockquote>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 单缓冲：在CPU和外设之间设置了一个缓冲区，当有数据交换时，先把数据发往缓冲区，再从缓冲区读数据。</span><br><span class="line">- 双缓冲：具有两个缓冲，当一个进程正往一个缓冲区读数据的时候，操作系统可能正在读或写两一个缓冲区。</span><br><span class="line">- 循环缓冲：具有对个缓冲区的组合，它更加能够缓和CPU和外设之间速度不匹配的问题。</span><br><span class="line">- 缓冲池：有多个系统公用的缓冲区组成。</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>解释页式存储管理为什么设置页表和快表：</p>
+</blockquote>
+<ul>
+<li>页式存储管理首先把主存存储器分成大小相等的物理块，作为主存分配的物理单位，同时要求程序逻辑地址也划分成与块大小一致的页面，这样就可以把作业信息按页面存放在块中。进行存储分配时，根据作业大小，确定其页面数，在装入主存时给它分配相应数目的物理块。这些物理块可以不相邻，为了在作业执行过程中准确的查找逻辑地址与绝对地址对应关系，系统为每个作业建立一张页表，指出逻辑地址中的页号与物理块中的快好对应关系。</li>
+<li>页表一般存放在主存储器中，当要按照给定的逻辑地址进行读写时，必须两次访问主存，延长了指令的执行周期，降低了执行速度，为了提高存取速度，系统设置了一个小容量的高速缓冲存储器，用来存放页表的一部分，即快表，可以一次访问主存完成读写，大大缩减地址转换时间，从而提高了查询速度。</li>
+</ul>
+<blockquote>
+<p>什么是顺序文件？试说明顺序文件的优点和缺点。</p>
+</blockquote>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 记录按照某种顺序排列所形成的文件。</span><br><span class="line">- 优点：当要读或写一大批记录时，顺序文件的效率是最高的。</span><br><span class="line">- 缺点：文件较大时，对查找、修改、增加和删除单条记录比较麻烦。</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>简述什么是SPOOLING技术（SPOOLING工作原理）：</p>
+</blockquote>
+<ul>
+<li>SPOOLING是关于慢速字符设备如何与计算机主机交换信息的一种技术，通常称为“假脱机技术”。它的核心思想是以联机的方式得到脱机的效果。低速设备经过通道和外设在主机内存的缓冲存储器与高速设备相连，该高速设备通常是辅存。为了从低速设备上输入信息，或者存放将要输出到低速设备上的信息，在辅存开辟一固定区域，叫“输出井”和“输入井”。</li>
+<li>简单来说就是在内存中形成缓冲区，在高速设备形成输出井和输入井，传递的时候，从低速设备传入缓冲区，再传到高速设备的输入井，再从高速设备的输出井，传到缓冲区，再传到低速设备。在多道程序下，利用其中一道或者两道模拟脱机输入/输出的外围控制机的功能，以达到假脱机的目的。可以把独占的设备变成共享的虚拟设备，从而提高独占设备的利用率。</li>
+</ul>
+<blockquote>
+<p>SPOOLING的组成部分：</p>
+</blockquote>
+<ul>
+<li>输入井和输出井：在磁盘上开辟两个大存储空间。输入井是模拟脱机输入时的磁盘设备，用于暂存I/O设备输入的数据；输出井是模拟脱机输出时磁盘，用于暂存用户程序的输出数据。</li>
+<li>输入缓冲区和输出缓冲区：为了缓和CUP和磁盘之间速度不匹配的矛盾，在内存中要开辟两个缓冲区；输入缓冲区和输出缓冲区。输入缓冲区用于暂存由输入设备送来的数据，以后再传送到输入井。输出缓冲区与暂存从输出井送来的数据，以后在传送个输出设备。</li>
+<li>输入进程和输出进程：这里利用两个进程来模拟脱机I/O的外围控制机。其中，输入进程模拟脱机输入时的外围控制机，将用户要求的数据从输入机通过输入缓冲区再送到输入井，当CPU需要输入数据是，直接从输入井读入内存；输出进程模拟脱机输出时的外围控制机，把用户要求输出的数据先从内存送到输出井，待输出设备空闲时，在将输出井中的数据经过输出缓冲区送到输出设备上。 </li>
+</ul>
+<blockquote>
+<p>解释页式存储管理中为什么要设置页表和快表？</p>
+</blockquote>
+<ul>
+<li>页式存储管理首先把主存储器分成大小相等的物理块，作为主存分配的物理单位，同时要求程序逻辑地址也划分成与块大小一致的页面，这样就可以把作业信息按页面存放在块中。进行存储分配是，根据作业大小，确定其页面数，在装入主存时给他分配相应数目的物理块。这些物理块可以不相邻，为了在作业执行过程中准确的查找逻辑地址与绝对地址的对应关系，系统为每个作业建立一张表，指出逻辑地址中的页号与物理块中的块号的对应关系。</li>
+<li>页表一般存放在主存储器中，当要按给定的逻辑地址进行读/写时，必须两次访问主存，延长了指令的执行周期，降低了执行速度，为了提高存取速度，系统设置了一个小容量的高速缓冲存储器，用来存放页面的一部分，即快表，可以一次访问主存完成读/写，大大缩短地址转换时间，从而提高查找速度。</li>
+</ul>
+<blockquote>
+<p>什么是死锁？为什么会产生死锁？死锁的必要条件和充分条件以及如何预防、避免和解除死锁？</p>
+</blockquote>
+<ul>
+<li>死锁是由于进程之间因竞争资源或推进顺序不当导致的一种无法继续推进的状态。</li>
+<li>因为系统中存在一些不可剥夺资源，当两个或两个以上的进程占有自身的资源并请求对方资源时，会导致每个进程都无法向前推进。</li>
+<li>必要条件：互斥条件、不可剥夺条件、请求并保持条件、循环等待条件。</li>
+<li>充分条件：当且仅当系统的资源分配图是不可完全简化的，该充分条件被称为死锁定理。</li>
+<li>预防死锁：通过破坏死锁产生的四个必要条件中的一个或几个。<ul>
+<li>破坏互斥条件：在系统中取消互斥条件，由于互斥条件时非共享设备所必须的，不仅不能改变，还应加以保证，因此主要破坏产生死锁的其他三个条件。</li>
+<li>破坏请求和保持条件：在程序运行前必须一次性申请所有资源，若系统有足够的资源，便可把其所需要的所有资源分配给进程，则进程在运行期间不会提出资源要求；若只要有一种资源不能满足进程的要求，就让进程等待，且进程在等待期间不占有任何资源。</li>
+<li>破坏不可剥夺条件：为了破坏非剥夺条件，要求当一个已经保持某些非剥夺资源的进程，提出新的资源请求而得不到满足时，必须释放已经保持的所有资源。</li>
+<li>破坏循环等待条件：例如将系统中的所有资源统一编号，进程可在任何时刻提出资源申请，但所有申请必须暗战资源的编号顺序（升序）提出，也就是资源的有序分配策略。</li>
+</ul>
+</li>
+<li>死锁避免：在动态分配资源的过程中，用一些算法防止系统进入不安全状态。</li>
+<li>解除死锁：当检测到系统已发生死锁时，就采取相应措施，将进程从死锁状态中解脱出来。<ul>
+<li>资源剥夺法：挂起某些死锁进程，并抢占它的资源，将这些资源分配给其他的死锁进程。</li>
+<li>撤销进程法：强制撤销部分甚至全部死锁进程并剥夺这些进程的资源。</li>
+<li>进程回退法：让一个或多个进程回退到注意回避死锁的地步，进程回退时自动释放资源而非剥夺。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>阐述基本分页存储管理和请求分页存储管理的异同之处</p>
+</blockquote>
+<ul>
+<li>在基本分页存储管理系统中，系统将每个程序按固定的大小分成若干页，每页对应一个物理块号。程序的所有页面都被装到内存中。</li>
+<li>在请求分页存储管理系统中，程序仍被分成若干页，但仅仅装入程序运行的必须页面。当需要某个页面而不在内存时，在请求从外部调入。如果没有空闲的空间，则利用置换技术进行页面的淘汰置换。</li>
+</ul>
+<blockquote>
+<p>操作系统中什么是虚拟存储？为什么要引入虚拟存储技术？</p>
+</blockquote>
+<ul>
+<li>在层次结构存储器的计算机系统中，自动实现部分装入和部分替换功能，能从逻辑上为用户提供一个比物理内存容量大的多，可寻址“主存储器”，叫做虚拟存储器。</li>
+<li>引入虚拟存储技术的主要目的是：提高系统的内存利用率和系统吞吐量。</li>
+</ul>
+<blockquote>
+<p>考虑文件系统的外存分配，简述什么是连续分配、链接分配和索引分配。</p>
+</blockquote>
+<ul>
+<li><p>连续分配方式是指创建文件时需要给文件分配一组连续的盘块。</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 优点：顺序访问容易，速度快。</span><br><span class="line">- 缺点：要求一个文件分配连续的存储空间，必须事先知道文件的长度，不能灵活地插入和删除记录，不利于动态增长的文件。</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>链接分配分为显示链接和隐式链接，文件占用的所有盘块利用指针链接在一起。</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 优点：提高了外存的利用率，便于插入、删除、修改记录，能适应文件的动态增长，无需事先知道文件的大小。</span><br><span class="line">- 缺点：适合顺序访问，不适合随机访问，查找效率低，文件的数据块之间是通过指针进行链接，指针信息存放信息存放消耗外存空间。</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>索引分配是为文件的每个分区单独创建一张索引表，该索引表记录了分配给文件的所有盘块</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 优点：既支持顺序访问，也支持随机访问，并且查找效率高，便于文件删除。</span><br><span class="line">- 缺点：索引表增加存储空间的开销，索引表的查找策略对文件系统效率影响较大。</span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<blockquote>
+<p>什么是DMA方式？它和中断方式的主要区别是什么？</p>
+</blockquote>
+<blockquote>
+<p>简述利用位示图进行文件存储空间管理的思想。这种方法的有缺点是什么？</p>
+</blockquote>
+<ul>
+<li>利用二进制的一位来表示磁盘中一个盘块的使用情况，“0”表示盘块空闲，“1”表示盘块已分配。</li>
+<li>优点：很容易找到一个连续的空闲块。</li>
+<li>缺点：整个磁盘的位视图文件比较大，在磁盘空闲块比较少时，搜索空闲块比较费时。</li>
+</ul>
+<blockquote>
+<p>什么是重定位？为什么要引入充重定位？</p>
+</blockquote>
+<ul>
+<li>重定位是将地址空间中的逻辑地址转换为物理地址。</li>
+<li>因为源程序经过编译、链接产生的装入模块是从0开始编址的，地址都是相对起始地址的相对地址。在装入内存时，分配到的内存的起始地址一般不为0，所以实际物理地址和装入模块中的相对地址不同。为保证程序正确运行，需要进行重定位。</li>
+</ul>
+<blockquote>
+<p>在分页存储管理系统中，页表的主要作用是什么？大的逻辑地址给页表设计带来什么新的问题，应如何解决？</p>
+</blockquote>
+<ul>
+<li>页表的主要作用是用来记录进程中的每个页面和对应的页框的信息。</li>
+<li>非常大的逻辑地址空间会导致进程的页表增大，装入连续的地址空间难度大。</li>
+<li>可以通过多级页表机制解决这个问题，对页表进行分页，将页表离散的存储，并为离散的页表再建立页表。也可以引入虚拟页式存储，提高内存利用率。</li>
+</ul>
+<blockquote>
+<p>***是否可能产生死锁？为什么？</p>
+</blockquote>
+<ul>
+<li>不可能发生死锁，因为破坏了产生死锁的四个必要条件之一：循环等待条件。</li>
+<li>如有循环等待，则xxx，与题意xxx不符。所以，不可能存在循环等待。</li>
+</ul>
+<blockquote>
+<p>什么是抖动？抖动的原因？减少抖动的措施？</p>
+</blockquote>
+<ul>
+<li>在页面置换过程中，刚刚换出的页面马上又要换入主存，刚刚换入繁荣页面又要换出主存，这种频繁的页面调度行为叫做抖动。</li>
+<li>原因：某个进程频繁访问的页面数目高于可用的物理块。</li>
+<li>解决方案：增加物理块（对先进先出算法不管用）；选择适当的页面置换算法等。</li>
+</ul>
+<blockquote>
+<p>什么是快表？说明利用快表的地址转换过程是怎么样的？</p>
+</blockquote>
+<ul>
+<li>系统设置了一个小容量的高速缓冲存储器，用来存放页表的一部分，即快表。可以一次访问主存完成读/写，大大缩减地址转换时间，从而提高查找速度。</li>
+<li>地址转换过程：按照逻辑地址中的页号查快表，若该也已存在快表中，直接从中取出该页对应的页框号，与页内偏移量拼接形成物理地址；若该页不在块表中，则再查主存页表取出对应页框号，与页内偏移形成物理地址，同时将该页登记到快表，当块表满后，则必须按照一定的算大对旧的页表项进行替换。</li>
+</ul>
+<blockquote>
+<p>软连接硬链接是什么？主要区别是什么？</p>
+</blockquote>
+<ul>
+<li>基于索引结点的共享方式（硬连接）：不同目录下使用相同的索引节点，在索引结点中再增加一个数值来统计指向该索引节点的目录项个数，只有计数值为1时才可以删除该索引节点，若计数值大于1删除时吧计数值减1即可，增加共享时计数值加1。在硬连接中，目录项中只有文件名，指向的是共同的索引结点，索引结点再指向文件，所以一个文件名修改索引结点，其他所有文件名的索引结点都被修改了，因为所有文件名指向同一个索引结点。</li>
+</ul>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 优点：实现文件的异名共享。</span><br><span class="line">- 缺点：当文件被多个用户共享时，文件拥有者不能删除文件。</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>利用符号链实现的文件共享（软连接）：相当于把共享文件的路径复制过来（并不拥有文件），并且只有在文件试图去访问时才会更新其路径副本。</li>
+</ul>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 优点：解决了文件拥有者不能够删除共享了的文件问题。</span><br><span class="line">- 缺点：当其他用要访问共享文件时，需要逐层查找目录，开销较大。</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>区别：只要有一个硬连接存在，物理文件就不会被清除。硬链接和原文件是“平等”的，只有删除一个不能使文件真正被删除；如果软连接创建时指定的那个目录被“删除”，则无法访问物理文件。软连接是附属原文件的，删除、更改原文件路径后软链接失效。</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">MoYiXuan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://lanyiran.com/posts/4e12b941/">http://lanyiran.com/posts/4e12b941/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://lanyiran.com">LanYiRan</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统    </a><a class="post-meta__tags" href="/tags/%E8%80%83%E7%A0%94/">考研    </a></div><div class="post_share"><div class="social-share" data-image="/img/24.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付宝"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/posts/b3da44e/"><img class="prev_cover lazyload" data-src="/img/25.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>单层感知器</span></div></a></div><div class="next-post pull_right"><a href="/posts/383b5193/"><img class="next_cover lazyload" data-src="/img/23.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>终端走代理</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/posts/54832/" title="进程调度"><img class="relatedPosts_cover lazyload"data-src="/img/5.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">进程调度</div></div></a></div><div class="relatedPosts_item"><a href="/posts/cd354b16/" title="作业调度"><img class="relatedPosts_cover lazyload"data-src="/img/18.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-22</div><div class="relatedPosts_title">作业调度</div></div></a></div></div><div class="clear_both"></div></div></div></main><footer id="footer" style="background-image: url(/img/24.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By MoYiXuan</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a hrefmy <a href"https://www.lanyiran.com/">blog</a>!</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script id="ribbon_piao" mobile="false" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/ClickShowText.js"></script></body></html>
